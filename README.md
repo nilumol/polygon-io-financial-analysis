@@ -38,19 +38,31 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Basic Usage
+### Single Stock Analysis
 
-Run the main analysis script:
+Run the single stock analysis script:
 ```bash
 python single_agg_calc_SMA_ATR.py
 ```
 
-### Configuration
-
-You can modify the following parameters in the script:
+**Configuration:**
 - `ticker`: Stock symbol (default: "MU")
 - `start_date`: Start date for data collection (default: "2019-01-01")
 - `end_date`: End date for data collection (default: "2024-09-18")
+
+### Multiple Stock Analysis
+
+Run the multi-stock analysis script:
+```bash
+python multiple_loop_agg_calc_SMA_ATR.py
+```
+
+**Configuration:**
+- `tickers`: List of stock symbols (default: ["GOOGL", "AAPL", "AMZN", "META", "NVDA", "TSLA"])
+- `start_date`: Start date for data collection (default: "2019-01-01")
+- `end_date`: End date for data collection (default: "2024-08-20")
+
+**Note:** The multi-stock script creates separate CSV files for each ticker.
 
 ## Output
 

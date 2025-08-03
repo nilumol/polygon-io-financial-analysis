@@ -2,9 +2,15 @@ import os
 import requests
 import pandas as pd
 from datetime import datetime
+from dotenv import load_dotenv
 
-# Define the API key and base URLs
-api_key = "64PQ5AUnrPph0uYqVtINCzIHXk1ySabJ"
+# Load environment variables
+load_dotenv()
+
+# Get API key from environment variable
+api_key = os.getenv("POLYGON_API_KEY")
+if not api_key:
+    raise ValueError("POLYGON_API_KEY not found in environment variables. Please set it in your .env file.")
 base_url_agg = "https://api.polygon.io/v2/aggs/ticker/{}/range/1/day"
 base_url_sma = "https://api.polygon.io/v1/indicators/sma/{}"
 
